@@ -10,7 +10,10 @@
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier",
-    "check": "prettier --write . && eslint --fix"
+    "check": "prettier --write . && eslint --fix",
+    "generate:specs": "npm run generate:specs:api",
+    "generate:specs:api": "npx @manifoldco/swagger-to-ts api.json -o ./generated/api.ts --namespace PulpitApi",
+		"pull:specs:api": "curl -o api.json http://localhost:8000/swagger/doc.json"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",
