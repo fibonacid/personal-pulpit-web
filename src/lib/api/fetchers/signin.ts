@@ -1,5 +1,5 @@
 import type { ApiFetcher, ApiHandler, ApiResponse } from "../types";
-import { jsonFetcher } from "../utils";
+import { jsonFetcher, API_URL } from "../utils";
 import { useMutation } from "@tanstack/react-query";
 
 export type SignInRequestBody = ApiHandler<'signinInput'>
@@ -18,7 +18,8 @@ export type SignInResponseBody = ApiResponse<{
 }>
 
 export const signIn: ApiFetcher<SignInRequestBody, SignInResponseBody> = async (input) => {
-	const request = new Request('/api/signin', {
+	const url = new URL('/api/v1/auth/register', API_URL);
+	const request = new Request(url, {
 		method: 'POST',
 		body: JSON.stringify(input),
 	});

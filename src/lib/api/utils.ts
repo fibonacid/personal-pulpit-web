@@ -1,3 +1,5 @@
+export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export async function jsonFetcher<TResponse extends Record<string, any>>(info: RequestInfo): Promise<TResponse> {
 	// inject headers
 	const request = new Request(info, {
