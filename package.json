@@ -13,9 +13,10 @@
     "check": "prettier --write . && eslint --fix",
     "generate:specs": "npm run generate:specs:api",
     "generate:specs:api": "npx @manifoldco/swagger-to-ts api.json -o ./generated/api.ts --namespace PulpitApi",
-		"pull:specs:api": "curl -o api.json http://localhost:8000/swagger/doc.json"
+    "pull:specs:api": "curl -o api.json http://localhost:8000/swagger/doc.json"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.0.6",
     "@tanstack/react-devtools": "^0.2.2",
     "@tanstack/react-query": "^5.66.5",
